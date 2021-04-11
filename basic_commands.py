@@ -5,7 +5,7 @@ params = {
     "password": "postgres",
     "host": "127.0.0.1",
     "port": "5432",
-    "database": "postgres"
+    "database": "exercises"
 }
 
 # Connect to an existing database
@@ -19,7 +19,7 @@ cur.execute("CREATE TABLE test (id serial PRIMARY KEY, num integer, data varchar
 
 # Pass data to fill a query placeholders and let Psycopg perform
 # the correct conversion (no more SQL injections!)
-cur.execute("INSERT INTO test (num, data) VALUES (%s, %s)", (100, "abc'def"))
+cur.execute("INSERT INTO test (num, data) VALUES (%s, %s)", (100, "abcdef"))
 
 # Query the database and obtain data as Python objects
 cur.execute("SELECT * FROM test;")
